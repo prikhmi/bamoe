@@ -14,12 +14,60 @@
     <informationRequirement id="_33E69BAE-C297-4DEE-A3FC-7337F3882B92">
       <requiredInput href="#_15A4DB1F-DFC8-42DB-A924-0E5CC86F3FE9" />
     </informationRequirement>
+    <decisionTable id="_23B4017D-32BE-4EB7-8707-BF2BB7E905EA" hitPolicy="UNIQUE" label="RiskCategory">
+      <input id="_92D25A29-F525-4F7F-8AF0-8E3BC84EB01D">
+        <inputExpression id="_51418E85-2BD0-453D-89DC-8C8FFB75D450" typeRef="number">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="_482577AC-4150-4025-A113-A34D702B63E5">
+        <inputExpression id="_474A4FD7-5798-4625-B076-98BC12DD817C" typeRef="string">
+          <text>healthStatus</text>
+        </inputExpression>
+      </input>
+      <output id="_0A321988-EB1C-40E4-8B54-DB1ABF5592F7" />
+      <annotation name="Annotations" />
+      <rule id="_347BCCF9-CE6C-44FD-B378-49BC72551ADB">
+        <inputEntry id="_62E63350-FC1E-49E1-9BD2-F9FCDDD828B6">
+          <text>-&lt; 30</text>
+        </inputEntry>
+        <inputEntry id="_4EFA85C6-D059-48B0-BBB9-5168944F5E76">
+          <text>&quot;Good&quot;</text>
+        </inputEntry>
+        <outputEntry id="_E8F91CC4-5C73-47C3-A290-6D841078A19A">
+          <text>&quot;low&quot;</text>
+        </outputEntry>
+        <annotationEntry>
+          <text>// Your annotations here</text>
+        </annotationEntry>
+      </rule>
+      <rule id="_8B3F882E-06FF-47F7-A738-6834520A265B">
+        <inputEntry id="_CB44C4CF-6FC3-4737-8D44-D3AA8AEDC4AC">
+          <text>-&lt; 30</text>
+        </inputEntry>
+        <inputEntry id="_E655E90C-7705-4CF0-A71A-CF59D533ACCE">
+          <text>&quot;Average&quot;</text>
+        </inputEntry>
+        <outputEntry id="_5B02CFB1-36B4-4E9B-87F3-51CAED889A4D">
+          <text>&quot;Medium&quot;</text>
+        </outputEntry>
+        <annotationEntry>
+          <text></text>
+        </annotationEntry>
+      </rule>
+    </decisionTable>
   </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_5957987B-0ADE-4A15-BA09-79D0EF75E039" name="Default DRD" useAlternativeInputDataShape="false">
       <di:extension>
         <kie:ComponentsWidthsExtension>
-          <kie:ComponentWidths />
+          <kie:ComponentWidths dmnElementRef="_23B4017D-32BE-4EB7-8707-BF2BB7E905EA">
+            <kie:width>60</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>240</kie:width>
+          </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="_F37C1EC9-A4CD-4A9E-AF62-82F94B1AEC96" dmnElementRef="_0676C305-C09A-452F-989A-37A70925DD79" isCollapsed="false" isListedInputData="false">
