@@ -1,0 +1,18 @@
+package com.ibm.tradefinance;
+
+
+import com.ibm.tradefinance.model.RuleRequest;
+import com.ibm.tradefinance.model.RuleResponse;
+import com.ibm.tradefinance.util.RulesData;
+
+
+rule "Initalize Rules"
+    ruleflow-group "init-group"
+    salience 10
+when
+    eval(true)
+then
+   insert(new RuleResponse());
+   insert(new RulesData());
+   System.out.println("Initalize Rules Completed]");
+end

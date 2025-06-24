@@ -1,0 +1,32 @@
+package com.ibm.tradefinance;
+
+import com.ibm.tradefinance.model.Document;
+import com.ibm.tradefinance.model.HighLightedText;
+import com.ibm.tradefinance.model.RuleRequest;
+import com.ibm.tradefinance.model.RuleResponse;
+import com.ibm.tradefinance.model.RuleResult;
+import com.ibm.tradefinance.util.AppConstants;
+
+rule "LC Boycott clause check exist"
+    ruleflow-group "compliance-group"
+when
+    $request : RuleRequest()
+    $response : RuleResponse()
+    $doc : Document(documentType matches "(?i).*LetterOfCredit.*") from $request.documents
+    $highlight : HighLightedText(name matches "(?i).*boycott.*") from $doc.highLightedText
+    eval($doc.getLcBoycottClause())
+then
+    String refData = "Reference Data Input : 46A: Documents Required : " + $doc.getLcDocumentRequired()
+                     + "\n47a: Additional Conditions : " + $doc.getLcAdditionalCondition();
+
+    String highText = String.join(":", $highlight.getValue());
+    $response.addRuleResult(
+            "LC Boycott Clause Present", 
+            "FAIL", 
+            "Comment : " + AppConstants.BOYCOTT_YES, 
+            refData, 
+            highText
+        );
+  
+    System.out.println("[LC Boycott Clause Exist Completed]");
+end
