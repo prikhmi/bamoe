@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_8E5974BC-3246-4E4F-A8B1-81464094EF12" id="_081579A2-FA81-4A7B-B33B-8A39AD390723" name="DMN_1B9F4289-BF4D-495E-AE14-E39E0272B87D" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_8E5974BC-3246-4E4F-A8B1-81464094EF12" id="_081579A2-FA81-4A7B-B33B-8A39AD390723" name="DMN_1B9F4289-BF4D-495E-AE14-E39E0272B87D">
   <inputData name="age" id="_0676C305-C09A-452F-989A-37A70925DD79">
     <variable name="age" id="_015921F5-0B69-4746-B726-B31DAA21F73E" typeRef="number" />
   </inputData>
@@ -127,6 +127,15 @@
       </rule>
     </decisionTable>
   </decision>
+  <decision name="Eligibility" id="_A630FECD-758D-45E0-B700-32902BE57FAD">
+    <variable name="Eligibility" id="_02557E6C-E419-447E-B9FC-26E09CCF39B2" />
+    <informationRequirement id="_0FA6AA7C-3E2C-4812-8B61-06E90AA4F7B4">
+      <requiredDecision href="#_DF777941-CBAC-4BC5-B2C5-9494B62A5C81" />
+    </informationRequirement>
+    <literalExpression id="_C0E445B2-228B-41C1-A8B7-18099290B679" label="Eligibility">
+      <text>if RiskCategory = &quot;High&quot; then false else true</text>
+    </literalExpression>
+  </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_5957987B-0ADE-4A15-BA09-79D0EF75E039" name="Default DRD" useAlternativeInputDataShape="false">
       <di:extension>
@@ -137,6 +146,9 @@
             <kie:width>118</kie:width>
             <kie:width>118</kie:width>
             <kie:width>240</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_C0E445B2-228B-41C1-A8B7-18099290B679">
+            <kie:width>190</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
@@ -156,6 +168,13 @@
       <dmndi:DMNEdge id="_2F227383-D5DE-40C4-BA67-4364E839AB16" dmnElementRef="_33E69BAE-C297-4DEE-A3FC-7337F3882B92" sourceElement="_D089D1E0-CDE2-428A-86F4-7B02AA246228" targetElement="_036315B5-8A6F-463B-8112-B5008A7D9701">
         <di:waypoint x="680" y="260" />
         <di:waypoint x="580" y="180" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="_629DF460-0734-45D3-9C6E-E78C2363387B" dmnElementRef="_A630FECD-758D-45E0-B700-32902BE57FAD" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="980" y="260" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_8BA45B53-E242-4D9B-A1BC-890DEF9817AE" dmnElementRef="_0FA6AA7C-3E2C-4812-8B61-06E90AA4F7B4" sourceElement="_036315B5-8A6F-463B-8112-B5008A7D9701" targetElement="_629DF460-0734-45D3-9C6E-E78C2363387B">
+        <di:waypoint x="580" y="140" />
+        <di:waypoint x="1060" y="260" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
