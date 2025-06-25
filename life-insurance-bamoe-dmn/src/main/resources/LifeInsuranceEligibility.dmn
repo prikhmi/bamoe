@@ -128,11 +128,11 @@
     </decisionTable>
   </decision>
   <decision name="Eligibility" id="_A630FECD-758D-45E0-B700-32902BE57FAD">
-    <variable name="Eligibility" id="_02557E6C-E419-447E-B9FC-26E09CCF39B2" />
+    <variable name="Eligibility" id="_02557E6C-E419-447E-B9FC-26E09CCF39B2" typeRef="boolean" />
     <informationRequirement id="_3DC79B94-4CFE-49F5-92ED-39451A7457C7">
       <requiredDecision href="#_DF777941-CBAC-4BC5-B2C5-9494B62A5C81" />
     </informationRequirement>
-    <literalExpression id="_C0E445B2-228B-41C1-A8B7-18099290B679" label="Eligibility">
+    <literalExpression id="_C0E445B2-228B-41C1-A8B7-18099290B679" label="Eligibility" typeRef="boolean">
       <text>if RiskCategory = &quot;High&quot; then false else true</text>
     </literalExpression>
   </decision>
