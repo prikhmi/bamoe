@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="http://www.ibm.com/dmn/lifeinsurance" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="LifeInsuranceEligibility" name="LifeInsuranceEligibility" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="http://www.ibm.com/dmn/lifeinsurance">
+  <dmn:extensionElements></dmn:extensionElements>
+  <dmn:inputData id="input_age" name="age">
+    <dmn:extensionElements></dmn:extensionElements>
+    <dmn:variable id="var_age" name="age" typeRef="number"></dmn:variable>
+  </dmn:inputData>
+  <dmn:inputData id="input_healthStatus" name="healthStatus">
+    <dmn:extensionElements></dmn:extensionElements>
+    <dmn:variable id="var_healthStatus" name="healthStatus" typeRef="string"></dmn:variable>
+  </dmn:inputData>
+  <dmn:decision id="decision_riskCategory" name="RiskCategory">
+    <dmn:extensionElements></dmn:extensionElements>
+    <dmn:variable id="var_riskCategory" name="RiskCategory" typeRef="string"></dmn:variable>
+    <dmn:informationRequirement id="_1E1F6497-084E-447F-AA36-D39D9AD5EB50">
+      <dmn:requiredInput href="#input_age"></dmn:requiredInput>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_C4DFBFA5-A46D-44C5-A81F-B3A4D6A7DB96">
+      <dmn:requiredInput href="#input_healthStatus"></dmn:requiredInput>
+    </dmn:informationRequirement>
+  </dmn:decision>
+  <dmn:decision id="decision_eligibility" name="Eligibility">
+    <dmn:extensionElements></dmn:extensionElements>
+    <dmn:variable id="var_eligibility" name="Eligibility" typeRef="boolean"></dmn:variable>
+    <dmn:informationRequirement id="_51394B09-C82C-4B66-9522-813223778ED6">
+      <dmn:requiredDecision href="#decision_riskCategory"></dmn:requiredDecision>
+    </dmn:informationRequirement>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_AC58068E-EBDD-4BAE-B203-63FF994E3276" name="DRG">
+      <di:extension></di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-input_age" dmnElementRef="input_age" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"></dmndi:FillColor>
+          <dmndi:StrokeColor red="0" green="0" blue="0"></dmndi:StrokeColor>
+          <dmndi:FontColor red="0" green="0" blue="0"></dmndi:FontColor>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="50" y="400" width="100" height="50"></dc:Bounds>
+        <dmndi:DMNLabel></dmndi:DMNLabel>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-input_healthStatus" dmnElementRef="input_healthStatus" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"></dmndi:FillColor>
+          <dmndi:StrokeColor red="0" green="0" blue="0"></dmndi:StrokeColor>
+          <dmndi:FontColor red="0" green="0" blue="0"></dmndi:FontColor>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="225" y="400" width="100" height="50"></dc:Bounds>
+        <dmndi:DMNLabel></dmndi:DMNLabel>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-decision_riskCategory" dmnElementRef="decision_riskCategory" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"></dmndi:FillColor>
+          <dmndi:StrokeColor red="0" green="0" blue="0"></dmndi:StrokeColor>
+          <dmndi:FontColor red="0" green="0" blue="0"></dmndi:FontColor>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="137" y="240" width="100" height="50"></dc:Bounds>
+        <dmndi:DMNLabel></dmndi:DMNLabel>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-decision_eligibility" dmnElementRef="decision_eligibility" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"></dmndi:FillColor>
+          <dmndi:StrokeColor red="0" green="0" blue="0"></dmndi:StrokeColor>
+          <dmndi:FontColor red="0" green="0" blue="0"></dmndi:FontColor>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="137" y="50" width="100" height="50"></dc:Bounds>
+        <dmndi:DMNLabel></dmndi:DMNLabel>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_1E1F6497-084E-447F-AA36-D39D9AD5EB50" dmnElementRef="_1E1F6497-084E-447F-AA36-D39D9AD5EB50">
+        <di:waypoint x="100" y="425"></di:waypoint>
+        <di:waypoint x="187" y="265"></di:waypoint>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_C4DFBFA5-A46D-44C5-A81F-B3A4D6A7DB96" dmnElementRef="_C4DFBFA5-A46D-44C5-A81F-B3A4D6A7DB96">
+        <di:waypoint x="275" y="425"></di:waypoint>
+        <di:waypoint x="187" y="265"></di:waypoint>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_51394B09-C82C-4B66-9522-813223778ED6" dmnElementRef="_51394B09-C82C-4B66-9522-813223778ED6">
+        <di:waypoint x="187" y="265"></di:waypoint>
+        <di:waypoint x="187" y="75"></di:waypoint>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
