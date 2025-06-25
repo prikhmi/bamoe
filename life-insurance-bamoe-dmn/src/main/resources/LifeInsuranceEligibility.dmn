@@ -29,7 +29,7 @@
       <annotation name="Annotations" />
       <rule id="_347BCCF9-CE6C-44FD-B378-49BC72551ADB">
         <inputEntry id="_62E63350-FC1E-49E1-9BD2-F9FCDDD828B6">
-          <text>-&lt; 30</text>
+          <text>&lt; 30</text>
         </inputEntry>
         <inputEntry id="_4EFA85C6-D059-48B0-BBB9-5168944F5E76">
           <text>&quot;Good&quot;</text>
@@ -43,7 +43,7 @@
       </rule>
       <rule id="_8B3F882E-06FF-47F7-A738-6834520A265B">
         <inputEntry id="_CB44C4CF-6FC3-4737-8D44-D3AA8AEDC4AC">
-          <text>-&lt; 30</text>
+          <text>&lt; 30</text>
         </inputEntry>
         <inputEntry id="_E655E90C-7705-4CF0-A71A-CF59D533ACCE">
           <text>&quot;Average&quot;</text>
@@ -71,7 +71,7 @@
       </rule>
       <rule id="_A2E726D2-493C-41E5-B633-03185818D32A">
         <inputEntry id="_531A78F2-0207-44E5-8C75-7EC6935DE02B">
-          <text>-&gt;= 30 and &lt;= 50</text>
+          <text>&gt;= 30 and &lt;= 50</text>
         </inputEntry>
         <inputEntry id="_EA5AD19D-4FAB-4673-A25C-15662ACB818D">
           <text>-&quot;Good&quot;</text>
@@ -85,7 +85,7 @@
       </rule>
       <rule id="_785F7E7C-5587-4535-9B96-E4EDBFB23F94">
         <inputEntry id="_0EC5C419-1EA4-4B07-B09A-DAC846E122AA">
-          <text>-&gt;= 30 and &lt;= 50</text>
+          <text>&gt;= 30 and &lt;= 50</text>
         </inputEntry>
         <inputEntry id="_A19AC464-4BBA-44D7-A6AF-209B64094BE2">
           <text>-&quot;Average&quot;</text>
@@ -99,7 +99,7 @@
       </rule>
       <rule id="_B3E7D4C3-CB53-4EC8-A793-A93939ABC37A">
         <inputEntry id="_ACC72AAD-629A-4D83-AA74-1ACC34B896E1">
-          <text>-&gt;= 30 and &lt;= 50</text>
+          <text>&gt;= 30 and &lt;= 50</text>
         </inputEntry>
         <inputEntry id="_6E751856-D015-4F7A-808B-82DF7ACB1AED">
           <text>-&quot;Poor&quot;</text>
@@ -113,7 +113,7 @@
       </rule>
       <rule id="_3C5189B5-C96A-4546-9CA4-14228A3763CA">
         <inputEntry id="_17175F27-30B6-4861-A4B5-F7FE3E8AB670">
-          <text>-&gt; 50</text>
+          <text>&gt; 50</text>
         </inputEntry>
         <inputEntry id="_CE701676-F55B-45B5-BD87-AA1A09D1E4B5">
           <text>-</text>
