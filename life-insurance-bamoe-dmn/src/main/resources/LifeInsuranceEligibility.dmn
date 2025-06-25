@@ -7,14 +7,14 @@
     <variable name="healthStatus" id="_B8ECC16D-7FC0-4482-91A1-AB64AC78436A" typeRef="string" />
   </inputData>
   <decision name="RiskCategory" id="_DF777941-CBAC-4BC5-B2C5-9494B62A5C81">
-    <variable name="RiskCategory" id="_29E7FC91-C5C6-438D-8EBF-955438CFB028" />
+    <variable name="RiskCategory" id="_29E7FC91-C5C6-438D-8EBF-955438CFB028" typeRef="string" />
     <informationRequirement id="_56428831-E8BB-4745-9444-40C0515DC898">
       <requiredInput href="#_0676C305-C09A-452F-989A-37A70925DD79" />
     </informationRequirement>
     <informationRequirement id="_33E69BAE-C297-4DEE-A3FC-7337F3882B92">
       <requiredInput href="#_15A4DB1F-DFC8-42DB-A924-0E5CC86F3FE9" />
     </informationRequirement>
-    <decisionTable id="_23B4017D-32BE-4EB7-8707-BF2BB7E905EA" hitPolicy="UNIQUE" label="RiskCategory">
+    <decisionTable id="_23B4017D-32BE-4EB7-8707-BF2BB7E905EA" typeRef="string" hitPolicy="UNIQUE" label="RiskCategory">
       <input id="_92D25A29-F525-4F7F-8AF0-8E3BC84EB01D">
         <inputExpression id="_51418E85-2BD0-453D-89DC-8C8FFB75D450" typeRef="number">
           <text>age</text>
