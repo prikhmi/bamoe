@@ -60,7 +60,7 @@
           <text>&lt;30</text>
         </inputEntry>
         <inputEntry id="_9D300F90-BB89-477D-8EDE-6E93C9C5B21E">
-          <text>-&quot;Poor&quot;</text>
+          <text>&quot;Poor&quot;</text>
         </inputEntry>
         <outputEntry id="_0505C51A-6C7F-4B95-805F-104F64A0C178">
           <text>&quot;High&quot;</text>
@@ -74,7 +74,7 @@
           <text>&gt;= 30 and &lt;= 50</text>
         </inputEntry>
         <inputEntry id="_EA5AD19D-4FAB-4673-A25C-15662ACB818D">
-          <text>-&quot;Good&quot;</text>
+          <text>&quot;Good&quot;</text>
         </inputEntry>
         <outputEntry id="_90A9077F-7F1E-48C8-BD22-B5517A459440">
           <text>&quot;Medium&quot;</text>
@@ -88,7 +88,7 @@
           <text>&gt;= 30 and &lt;= 50</text>
         </inputEntry>
         <inputEntry id="_A19AC464-4BBA-44D7-A6AF-209B64094BE2">
-          <text>-&quot;Average&quot;</text>
+          <text>&quot;Average&quot;</text>
         </inputEntry>
         <outputEntry id="_5CDBCF75-A05D-4302-BBE7-1E88F7A1CD97">
           <text>&quot;Medium&quot;</text>
@@ -102,7 +102,7 @@
           <text>&gt;= 30 and &lt;= 50</text>
         </inputEntry>
         <inputEntry id="_6E751856-D015-4F7A-808B-82DF7ACB1AED">
-          <text>-&quot;Poor&quot;</text>
+          <text>&quot;Poor&quot;</text>
         </inputEntry>
         <outputEntry id="_255D3740-28C1-469F-B434-1A20EDC5C237">
           <text>&quot;High&quot;</text>
