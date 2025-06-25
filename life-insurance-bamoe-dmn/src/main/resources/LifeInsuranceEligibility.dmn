@@ -97,6 +97,34 @@
           <text></text>
         </annotationEntry>
       </rule>
+      <rule id="_B3E7D4C3-CB53-4EC8-A793-A93939ABC37A">
+        <inputEntry id="_ACC72AAD-629A-4D83-AA74-1ACC34B896E1">
+          <text>-&gt;= 30 and &lt;= 50</text>
+        </inputEntry>
+        <inputEntry id="_6E751856-D015-4F7A-808B-82DF7ACB1AED">
+          <text>-&quot;Poor&quot;</text>
+        </inputEntry>
+        <outputEntry id="_255D3740-28C1-469F-B434-1A20EDC5C237">
+          <text>&quot;High&quot;</text>
+        </outputEntry>
+        <annotationEntry>
+          <text></text>
+        </annotationEntry>
+      </rule>
+      <rule id="_3C5189B5-C96A-4546-9CA4-14228A3763CA">
+        <inputEntry id="_17175F27-30B6-4861-A4B5-F7FE3E8AB670">
+          <text>-&gt; 50</text>
+        </inputEntry>
+        <inputEntry id="_CE701676-F55B-45B5-BD87-AA1A09D1E4B5">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="_63A73646-6F2F-4425-A8FE-59BDDF2F21F7">
+          <text>&quot;High&quot;</text>
+        </outputEntry>
+        <annotationEntry>
+          <text></text>
+        </annotationEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
