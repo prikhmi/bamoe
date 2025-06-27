@@ -1,0 +1,49 @@
+package com.ibm.tradefinance
+
+import com.ibm.tradefinance.model.RuleRequest;
+import com.ibm.tradefinance.model.RuleResponse;
+import com.ibm.tradefinance.model.GenAPIResponse;
+import com.ibm.tradefinance.model.HighLightedText;
+import com.ibm.tradefinance.util.AppConstants;
+global com.ibm.tradefinance.model.RuleResponse response;
+
+rule "LC Boycott Clause Present from GenAPI"
+when
+    $request : GenAPIResponse()
+    $highlight : HighLightedText(name matches "(?i).*boycott.*") from $request.getRequest().getGen_ai_response().getHighLightedText()
+    eval($request.getRequest().getGen_ai_response().getLcBoycottClause())
+then
+    String refData = "Reference Data Input : 46A: Documents Required : " + $request.getRequest().getLoc().getLcDocumentRequired()
+                   + "\n47a: Additional Conditions : " + $request.getRequest().getLoc().getLcAdditionalCondition();
+
+    String highText = String.join(":", $highlight.getValue());
+
+    response.addRuleResult(
+        "LC Boycott Clause Present",
+        "FAIL",
+        "Comment : " + AppConstants.BOYCOTT_YES,
+        refData,
+        highText
+    );
+
+    System.out.println("[Rule Fired] Boycott clause detected via GenAPI.");
+end
+
+rule "LC Boycott Clause Not Present from GenAPI"
+when
+    $request : GenAPIResponse()
+    eval(!$request.getRequest().getGen_ai_response().getLcBoycottClause())
+then
+    String refData = "Reference Data Input : 46A: Documents Required : " + $request.getRequest().getLoc().getLcDocumentRequired()
+                   + "\n47a: Additional Conditions : " + $request.getRequest().getLoc().getLcAdditionalCondition();
+
+   
+    response.addRuleResult(
+        "LC Boycott Clause Not Present",
+        "PASS",
+        "Comment : " + AppConstants.BOYCOTT_NO,
+        refData
+    );
+
+    System.out.println("[Rule Fired] No Boycott clause detected via GenAPI.");
+end
