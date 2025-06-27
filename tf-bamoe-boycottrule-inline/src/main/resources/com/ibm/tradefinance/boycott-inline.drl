@@ -1,0 +1,56 @@
+package com.ibm.tradefinance;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import org.json.JSONObject;
+import java.util.List;
+import com.ibm.tradefinance.model.RuleRequest;
+import com.ibm.tradefinance.model.RuleResponse;
+import com.ibm.tradefinance.model.GenAPIResponse;
+import com.ibm.tradefinance.util.AppConstants;
+import com.ibm.tradefinance.service.GenAIService;
+
+global com.ibm.tradefinance.service.GenAIService genAIService;
+global com.ibm.tradefinance.model.RuleResponse response;
+
+rule "Evaluate Boycott Clause from GenAPI"
+when
+    $request : RuleRequest()
+then
+    System.out.println("[Drools] Calling GenAPI from rule...");
+
+    String json = genAIService.getGenAIResponse($request);
+    if (json != null && !json.isBlank()) {
+        com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
+        GenAPIResponse genResponse = mapper.readValue(json, GenAPIResponse.class);
+
+        boolean boycott = genResponse.getRequest().getGen_ai_response().getLcBoycottClause();
+
+        String refData = "Reference Data Input : 46A: Documents Required : " +
+            genResponse.getRequest().getLoc().getLcDocumentRequired()
+            + "\n47a: Additional Conditions : " +
+            genResponse.getRequest().getLoc().getLcAdditionalCondition();
+
+        if (boycott) {
+            response.addRuleResult(
+                "LC Boycott Clause Present",
+                "FAIL",
+                "Comment : " + AppConstants.BOYCOTT_YES,
+                refData
+            );
+            System.out.println("[Rule Fired] Boycott clause detected via GenAPI.");
+        } else {
+            response.addRuleResult(
+                "LC Boycott Clause Not Present",
+                "PASS",
+                "Comment : " + AppConstants.BOYCOTT_NO,
+                refData
+            );
+            System.out.println("[Rule Fired] No Boycott clause detected via GenAPI.");
+        }
+    } else {
+        response.addRuleResult("GenAPI Failure", "FAILED", "No response received from GenAPI", null);
+    }
+end

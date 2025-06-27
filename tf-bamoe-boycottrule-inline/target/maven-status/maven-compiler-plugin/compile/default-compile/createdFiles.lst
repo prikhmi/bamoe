@@ -1,0 +1,15 @@
+com\ibm\tradefinance\model\Charge.class
+com\ibm\tradefinance\model\LetterOfCredit.class
+com\ibm\tradefinance\util\LoggerUtil.class
+com\ibm\tradefinance\util\AppConstants.class
+com\ibm\tradefinance\model\GenAPIResponse$Request.class
+com\ibm\tradefinance\model\GenAPIResponse.class
+com\ibm\tradefinance\model\RuleRequest.class
+com\ibm\tradefinance\service\GenAIService.class
+com\ibm\tradefinance\util\RulesData.class
+com\ibm\tradefinance\model\HighLightedText.class
+com\ibm\tradefinance\service\RuleEngineService.class
+com\ibm\tradefinance\model\GenAiData.class
+com\ibm\tradefinance\model\RuleResponse.class
+com\ibm\tradefinance\model\RuleResult.class
+com\ibm\tradefinance\RuleRest.class
