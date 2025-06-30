@@ -1,31 +1,64 @@
-package com.ibm.tradefinance;
+package com.ibm.tradefinance
 
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import org.json.JSONObject;
 import java.util.List;
 import com.ibm.tradefinance.model.RuleRequest;
 import com.ibm.tradefinance.model.RuleResponse;
 import com.ibm.tradefinance.model.GenAPIResponse;
-import com.ibm.tradefinance.util.AppConstants;
+import com.ibm.tradefinance.model.HighLightedText;
 import com.ibm.tradefinance.service.GenAIService;
+import com.ibm.tradefinance.util.AppConstants;
 
 global com.ibm.tradefinance.service.GenAIService genAIService;
 global com.ibm.tradefinance.model.RuleResponse response;
 
+/* ---------------------------------------------------------------------
+   Function: fetchGenAPIResponse
+------------------------------------------------------------------------ */
+function com.ibm.tradefinance.model.GenAPIResponse fetchGenAPIResponse(
+    com.ibm.tradefinance.model.RuleRequest request,
+    com.ibm.tradefinance.service.GenAIService genAIService) {
+
+    try {
+        String json = genAIService.getGenAIResponse(request);
+        if (json != null && !json.isBlank()) {
+            com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
+            return mapper.readValue(json, com.ibm.tradefinance.model.GenAPIResponse.class);
+        } else {
+            return null;
+        }
+    } catch (Exception e) {
+        System.out.println("[Drools] GenAPI fetch error: " + e.getMessage());
+        return null;
+    }
+}
+
+/* ---------------------------------------------------------------------
+   Function: extractBoycottHighlightText
+------------------------------------------------------------------------ */
+function String extractBoycottHighlightText(java.util.List highlights) {
+    StringBuilder sb = new StringBuilder();
+    if (highlights != null) {
+        for (Object obj : highlights) {
+            com.ibm.tradefinance.model.HighLightedText h = (com.ibm.tradefinance.model.HighLightedText) obj;
+            if (h.getName() != null && h.getName().toLowerCase().contains("boycott") && h.getValue() != null) {
+                for (Object val : h.getValue()) sb.append(val.toString()).append(":");
+            }
+        }
+    }
+    return sb.length() > 0 ? sb.substring(0, sb.length() - 1) : "";
+}
+
+
+/* ---------------------------------------------------------------------
+   Rule: Evaluate Boycott Clause from GenAPI
+------------------------------------------------------------------------ */
 rule "Evaluate Boycott Clause from GenAPI"
 when
     $request : RuleRequest()
 then
-    System.out.println("[Drools] Calling GenAPI from rule...");
+    GenAPIResponse genResponse = fetchGenAPIResponse($request, genAIService);
 
-    String json = genAIService.getGenAIResponse($request);
-    if (json != null && !json.isBlank()) {
-        com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
-        GenAPIResponse genResponse = mapper.readValue(json, GenAPIResponse.class);
-
+    if (genResponse != null) {
         boolean boycott = genResponse.getRequest().getGen_ai_response().getLcBoycottClause();
 
         String refData = "Reference Data Input : 46A: Documents Required : " +
@@ -33,12 +66,17 @@ then
             + "\n47a: Additional Conditions : " +
             genResponse.getRequest().getLoc().getLcAdditionalCondition();
 
+        String highText = extractBoycottHighlightText(
+            genResponse.getRequest().getGen_ai_response().getHighLightedText()
+        );
+
         if (boycott) {
             response.addRuleResult(
                 "LC Boycott Clause Present",
                 "FAIL",
                 "Comment : " + AppConstants.BOYCOTT_YES,
-                refData
+                refData,
+                highText
             );
             System.out.println("[Rule Fired] Boycott clause detected via GenAPI.");
         } else {
@@ -50,6 +88,7 @@ then
             );
             System.out.println("[Rule Fired] No Boycott clause detected via GenAPI.");
         }
+
     } else {
         response.addRuleResult("GenAPI Failure", "FAILED", "No response received from GenAPI", null);
     }
