@@ -8,7 +8,7 @@
     <dmn:variable name="teleVideoDetails" id="_17C03372-4152-423D-AB2C-297A7EF23B5C" typeRef="string" />
   </dmn:inputData>
   <dmn:decision name="dataMatch" id="_CB5198FD-1288-4A4B-84B6-F1087D84313E">
-    <dmn:variable name="dataMatch" id="_18BC2B3A-409F-4648-852B-E1D6D842E9A2" typeRef="boolean" />
+    <dmn:variable name="dataMatch" id="_18BC2B3A-409F-4648-852B-E1D6D842E9A2" typeRef="string" />
     <dmn:informationRequirement id="_9951C5CB-2DBB-4F86-A4FC-655D4E1712FB">
       <dmn:requiredInput href="#_29FE52D6-42C5-432D-8DC0-B8A5534A47BC" />
     </dmn:informationRequirement>
@@ -18,7 +18,7 @@
     <dmn:informationRequirement id="_074BC3D9-28E6-4D7C-95B8-304246F5B0A5">
       <dmn:requiredInput href="#_69B40AB2-BECD-4556-AB04-31A5AEB27124" />
     </dmn:informationRequirement>
-    <dmn:literalExpression id="_CA33CB1F-4827-4864-B318-54326879543F" typeRef="boolean" label="dataMatch">
+    <dmn:literalExpression id="_CA33CB1F-4827-4864-B318-54326879543F" typeRef="string" label="dataMatch">
       <dmn:text>if appFormData = teleVideoDetails or redFlag = true then true else false
 </dmn:text>
     </dmn:literalExpression>
@@ -31,6 +31,34 @@
     <dmn:informationRequirement id="_832A4454-CA0E-468B-BB28-478082580569">
       <dmn:requiredInput href="#_F17548A0-35E3-43A8-B1E6-CB4933DCA55F" />
     </dmn:informationRequirement>
+    <dmn:decisionTable id="_941C33E7-822D-40D0-8295-75253554FA0B" typeRef="context" hitPolicy="UNIQUE" label="Tele/Video call detail Rules">
+      <dmn:input id="_DD1AF325-2A46-4FEA-B0F1-5CB58E2A2733">
+        <dmn:inputExpression id="_1F39618B-1BE6-44D8-B8B3-B63DB7E6662A" typeRef="boolean">
+          <dmn:text>dataMatch</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_06A6BD2E-E5F0-4C3B-81E4-F9925826D769">
+        <dmn:inputExpression id="_D3751183-76D4-4684-A06A-6D94CF512242" typeRef="string">
+          <dmn:text>transcriptDetails</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_5BA13250-4627-419E-B85F-0C59C18BAD4A" />
+      <dmn:annotation name="Annotations" />
+      <dmn:rule id="_A479CF55-4C41-43D7-A3DA-AC757E794A79">
+        <dmn:inputEntry id="_A6D5A689-7F3E-4A45-8461-2697305E32D1">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_4E49BCFA-4A54-46CC-A2BB-641206D436CD">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_D5DB874E-CE4E-42B7-9984-F126B90C6F57">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>// Your annotations here</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
   </dmn:decision>
   <dmn:inputData name="redFlag" id="_69B40AB2-BECD-4556-AB04-31A5AEB27124">
     <dmn:variable name="redFlag" id="_A13A175E-4D44-4DE2-BF9D-DE8B667EE126" typeRef="boolean" />
@@ -44,6 +72,13 @@
         <kie:ComponentsWidthsExtension>
           <kie:ComponentWidths dmnElementRef="_CA33CB1F-4827-4864-B318-54326879543F">
             <kie:width>190</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_941C33E7-822D-40D0-8295-75253554FA0B">
+            <kie:width>60</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>123</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>240</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
