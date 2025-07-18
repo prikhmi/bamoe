@@ -37,27 +37,31 @@
     <dmn:informationRequirement id="_832A4454-CA0E-468B-BB28-478082580569">
       <dmn:requiredInput href="#_F17548A0-35E3-43A8-B1E6-CB4933DCA55F" />
     </dmn:informationRequirement>
-    <dmn:decisionTable id="_9D455697-0E5B-41BF-9074-2988D2934BF8" typeRef="context" hitPolicy="UNIQUE" label="Tele/Video call detail Rules">
-      <dmn:input id="_2D711FCF-6D30-4D82-A81F-63ECC50615E0">
-        <dmn:inputExpression id="_120E298E-8861-4521-8799-78A4E1EE46EA" typeRef="string">
+    <dmn:decisionTable id="_89CC47FE-1B6A-4FF8-B2A3-4F778204FC5B" typeRef="context" hitPolicy="UNIQUE" label="Tele/Video call detail Rules">
+      <dmn:input id="_F183F8E7-649F-4BE5-9DD4-C037CF6A9722">
+        <dmn:inputExpression id="_558ABFDD-A617-4CF5-8DE0-2D42F3BD12E7" typeRef="string">
           <dmn:text>dataMatch</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input id="_B5779C5B-85CA-4147-85D9-2A168A7CA2C6">
-        <dmn:inputExpression id="_4EEFCAEB-93EA-4E44-B721-7C5819492FCC" typeRef="string">
+      <dmn:input id="_940D5534-5089-4E12-A050-E2F2B69F3E46">
+        <dmn:inputExpression id="_D806627B-C20A-4FBE-A330-5E986D74EAF8" typeRef="string">
           <dmn:text>transcriptDetails</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:output id="_F8FB7CA9-A518-4908-ABF5-078604D4CA21" />
+      <dmn:output id="_54A4DE77-20DC-47DB-81A5-89FA16861F49" name="status" typeRef="string" />
+      <dmn:output id="_D54B7B89-4E11-4953-9E9F-0C45274BE289" name="failureMessage" typeRef="string" />
       <dmn:annotation name="Annotations" />
-      <dmn:rule id="_6F9A0825-7BB7-49BB-8CBE-FF6B33EFA76E">
-        <dmn:inputEntry id="_36B58D1D-63C9-45B4-B104-6B30DB8C54CE">
+      <dmn:rule id="_21CE6AD4-FE91-448D-91F5-8E2F6B6D8D70">
+        <dmn:inputEntry id="_87CFE506-1367-4948-A0E5-849801680FF9">
           <dmn:text>&quot;Yes&quot;</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_1189473F-26CB-461D-A8FC-BC334D8B7424">
-          <dmn:text>-</dmn:text>
+        <dmn:inputEntry id="_4194DDEB-CB67-4487-A4A9-43B1DB1672C1">
+          <dmn:text>&quot;Standard&quot;</dmn:text>
         </dmn:inputEntry>
-        <dmn:outputEntry id="_110A12C6-9DCA-4EF7-BF13-270DBD570613">
+        <dmn:outputEntry id="_E0987410-6811-4317-B139-E02433BE2EAF">
+          <dmn:text>&quot;Pass&quot;</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E972E2B3-E072-4BD7-AAAC-1EF9DEFF3132">
           <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
@@ -79,11 +83,12 @@
           <kie:ComponentWidths dmnElementRef="_CA33CB1F-4827-4864-B318-54326879543F">
             <kie:width>190</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_9D455697-0E5B-41BF-9074-2988D2934BF8">
+          <kie:ComponentWidths dmnElementRef="_89CC47FE-1B6A-4FF8-B2A3-4F778204FC5B">
             <kie:width>60</kie:width>
             <kie:width>118</kie:width>
             <kie:width>123</kie:width>
             <kie:width>118</kie:width>
+            <kie:width>100</kie:width>
             <kie:width>240</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
