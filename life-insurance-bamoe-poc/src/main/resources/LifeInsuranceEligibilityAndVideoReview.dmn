@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <dmn:definitions xmlns:dmn="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns="http://www.ibm.com/dmn/lifeinsurance" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:feel="https://www.omg.org/spec/DMN/20230324/FEEL/" xmlns:kie="https://kie.org/dmn/extensions/1.0" id="LifeInsuranceEligibility" name="LifeInsuranceEligibility" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="http://www.ibm.com/dmn/lifeinsurance">
   <dmn:extensionElements />
+  <dmn:itemDefinition id="_54831794-BD76-4015-ADC1-27EEE73D2255" name="transcriptDecision" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <dmn:typeRef>string</dmn:typeRef>
+    <dmn:typeConstraint id="_96830C29-61F0-403A-9BC2-CCB14347077C" kie:constraintType="enumeration">
+      <dmn:text>&quot;Standard&quot;, &quot;Sub Standard&quot;</dmn:text>
+    </dmn:typeConstraint>
+  </dmn:itemDefinition>
   <dmn:inputData name="appFormData" id="_29FE52D6-42C5-432D-8DC0-B8A5534A47BC">
     <dmn:variable name="appFormData" id="_C4B9446F-F552-45A5-8525-E61CDDC5D1BC" typeRef="string" />
   </dmn:inputData>
@@ -31,27 +37,27 @@
     <dmn:informationRequirement id="_832A4454-CA0E-468B-BB28-478082580569">
       <dmn:requiredInput href="#_F17548A0-35E3-43A8-B1E6-CB4933DCA55F" />
     </dmn:informationRequirement>
-    <dmn:decisionTable id="_941C33E7-822D-40D0-8295-75253554FA0B" typeRef="context" hitPolicy="UNIQUE" label="Tele/Video call detail Rules">
-      <dmn:input id="_DD1AF325-2A46-4FEA-B0F1-5CB58E2A2733">
-        <dmn:inputExpression id="_1F39618B-1BE6-44D8-B8B3-B63DB7E6662A" typeRef="boolean">
+    <dmn:decisionTable id="_9D455697-0E5B-41BF-9074-2988D2934BF8" typeRef="context" hitPolicy="UNIQUE" label="Tele/Video call detail Rules">
+      <dmn:input id="_2D711FCF-6D30-4D82-A81F-63ECC50615E0">
+        <dmn:inputExpression id="_120E298E-8861-4521-8799-78A4E1EE46EA" typeRef="string">
           <dmn:text>dataMatch</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input id="_06A6BD2E-E5F0-4C3B-81E4-F9925826D769">
-        <dmn:inputExpression id="_D3751183-76D4-4684-A06A-6D94CF512242" typeRef="string">
+      <dmn:input id="_B5779C5B-85CA-4147-85D9-2A168A7CA2C6">
+        <dmn:inputExpression id="_4EEFCAEB-93EA-4E44-B721-7C5819492FCC" typeRef="string">
           <dmn:text>transcriptDetails</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:output id="_5BA13250-4627-419E-B85F-0C59C18BAD4A" />
+      <dmn:output id="_F8FB7CA9-A518-4908-ABF5-078604D4CA21" />
       <dmn:annotation name="Annotations" />
-      <dmn:rule id="_A479CF55-4C41-43D7-A3DA-AC757E794A79">
-        <dmn:inputEntry id="_A6D5A689-7F3E-4A45-8461-2697305E32D1">
+      <dmn:rule id="_6F9A0825-7BB7-49BB-8CBE-FF6B33EFA76E">
+        <dmn:inputEntry id="_36B58D1D-63C9-45B4-B104-6B30DB8C54CE">
+          <dmn:text>&quot;Yes&quot;</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_1189473F-26CB-461D-A8FC-BC334D8B7424">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_4E49BCFA-4A54-46CC-A2BB-641206D436CD">
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_D5DB874E-CE4E-42B7-9984-F126B90C6F57">
+        <dmn:outputEntry id="_110A12C6-9DCA-4EF7-BF13-270DBD570613">
           <dmn:text></dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
@@ -73,7 +79,7 @@
           <kie:ComponentWidths dmnElementRef="_CA33CB1F-4827-4864-B318-54326879543F">
             <kie:width>190</kie:width>
           </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_941C33E7-822D-40D0-8295-75253554FA0B">
+          <kie:ComponentWidths dmnElementRef="_9D455697-0E5B-41BF-9074-2988D2934BF8">
             <kie:width>60</kie:width>
             <kie:width>118</kie:width>
             <kie:width>123</kie:width>
