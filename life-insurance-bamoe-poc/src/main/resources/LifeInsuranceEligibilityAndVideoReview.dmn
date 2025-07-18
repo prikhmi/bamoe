@@ -5,7 +5,7 @@
     <dmn:variable name="appFormData" id="_C4B9446F-F552-45A5-8525-E61CDDC5D1BC" typeRef="string" />
   </dmn:inputData>
   <dmn:inputData name="teleVideoDeails" id="_F77F59D1-EAEA-4DF6-81D2-C6CAA78BB250">
-    <dmn:variable name="teleVideoDeails" id="_17C03372-4152-423D-AB2C-297A7EF23B5C" />
+    <dmn:variable name="teleVideoDeails" id="_17C03372-4152-423D-AB2C-297A7EF23B5C" typeRef="string" />
   </dmn:inputData>
   <dmn:decision name="dataMatch" id="_CB5198FD-1288-4A4B-84B6-F1087D84313E">
     <dmn:variable name="dataMatch" id="_18BC2B3A-409F-4648-852B-E1D6D842E9A2" />
