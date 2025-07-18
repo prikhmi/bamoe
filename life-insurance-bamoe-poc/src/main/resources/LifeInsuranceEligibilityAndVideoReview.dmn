@@ -19,7 +19,7 @@
       <dmn:requiredInput href="#_69B40AB2-BECD-4556-AB04-31A5AEB27124" />
     </dmn:informationRequirement>
     <dmn:literalExpression id="_CA33CB1F-4827-4864-B318-54326879543F" typeRef="string" label="dataMatch">
-      <dmn:text>if appFormData = teleVideoDetails or redFlag = true then true else false
+      <dmn:text>if appFormData = teleVideoDetails or redFlag = true then &quot;Yes&quot; else &quot;No&quot;
 </dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
