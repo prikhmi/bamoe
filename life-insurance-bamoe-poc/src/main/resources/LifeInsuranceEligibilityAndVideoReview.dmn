@@ -150,10 +150,10 @@
           <dmn:text>true</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_6C71B777-FC69-4BB7-8ED8-291BEB1234D3">
-          <dmn:text></dmn:text>
+          <dmn:text>&quot;Fail&quot;</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_32F65EF9-0597-4F70-BB80-2CCE94C46A25">
-          <dmn:text></dmn:text>
+          <dmn:text>&quot;Failure Message- Red Flag case for TELE/Video Call&quot;</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
@@ -170,10 +170,10 @@
           <dmn:text>true</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_9C288846-65BD-4259-B151-B4B4C638C284">
-          <dmn:text></dmn:text>
+          <dmn:text>&quot;Fail&quot;</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_63B8643C-E778-4F11-970E-07F303722480">
-          <dmn:text></dmn:text>
+          <dmn:text>&quot;Failure Message- Red Flag case for TELE/Video Call&quot;</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text></dmn:text>
