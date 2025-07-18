@@ -15,10 +15,19 @@
     <dmn:informationRequirement id="_97AA9A3C-B1CF-4641-9A7B-A9B7CB41EB8C">
       <dmn:requiredInput href="#_F77F59D1-EAEA-4DF6-81D2-C6CAA78BB250" />
     </dmn:informationRequirement>
+    <dmn:informationRequirement id="_074BC3D9-28E6-4D7C-95B8-304246F5B0A5">
+      <dmn:requiredInput href="#_69B40AB2-BECD-4556-AB04-31A5AEB27124" />
+    </dmn:informationRequirement>
     <dmn:literalExpression id="_CA33CB1F-4827-4864-B318-54326879543F" typeRef="boolean" label="dataMatch">
       <dmn:text>if appFormData = teleVideoDetails then true else false</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
+  <dmn:decision name="New Decision" id="_0D5B5472-C7E3-4D32-9E72-16844C08B2DA">
+    <dmn:variable name="New Decision" id="_D148C278-44FA-40D7-AA6D-1300F0DD4B37" />
+  </dmn:decision>
+  <dmn:inputData name="redFlag" id="_69B40AB2-BECD-4556-AB04-31A5AEB27124">
+    <dmn:variable name="redFlag" id="_A13A175E-4D44-4DE2-BF9D-DE8B667EE126" typeRef="boolean" />
+  </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_AC58068E-EBDD-4BAE-B203-63FF994E3276" name="DRG" useAlternativeInputDataShape="false">
       <di:extension>
@@ -29,20 +38,30 @@
         </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="_E91BA6DF-5B06-45F9-A3CD-97B614531356" dmnElementRef="_29FE52D6-42C5-432D-8DC0-B8A5534A47BC" isCollapsed="false" isListedInputData="false">
-        <dc:Bounds x="40" y="340" width="160" height="80" />
+        <dc:Bounds x="-20" y="340" width="160" height="80" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="_0CFD66E0-CBCC-411B-BAE9-58FF6A047802" dmnElementRef="_F77F59D1-EAEA-4DF6-81D2-C6CAA78BB250" isCollapsed="false" isListedInputData="false">
-        <dc:Bounds x="280" y="340" width="160" height="80" />
+        <dc:Bounds x="180" y="340" width="160" height="80" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="_B156FBED-C2AE-4268-AF3F-400370A81D9C" dmnElementRef="_CB5198FD-1288-4A4B-84B6-F1087D84313E" isCollapsed="false" isListedInputData="false">
         <dc:Bounds x="180" y="200" width="160" height="80" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="_9A9BCCE5-B5D4-423B-8208-169C0F24F15D" dmnElementRef="_9951C5CB-2DBB-4F86-A4FC-655D4E1712FB" sourceElement="_E91BA6DF-5B06-45F9-A3CD-97B614531356" targetElement="_B156FBED-C2AE-4268-AF3F-400370A81D9C">
-        <di:waypoint x="120" y="380" />
+        <di:waypoint x="60" y="380" />
         <di:waypoint x="260" y="240" />
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="_2FAEB476-B241-4F68-841B-F7BA99446721" dmnElementRef="_97AA9A3C-B1CF-4641-9A7B-A9B7CB41EB8C" sourceElement="_0CFD66E0-CBCC-411B-BAE9-58FF6A047802" targetElement="_B156FBED-C2AE-4268-AF3F-400370A81D9C">
-        <di:waypoint x="360" y="380" />
+        <di:waypoint x="260" y="380" />
+        <di:waypoint x="260" y="240" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="_A3989C1D-16DD-4F5A-84BF-E8ECFFF98650" dmnElementRef="_0D5B5472-C7E3-4D32-9E72-16844C08B2DA" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="180" y="80" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_D554D8AD-EF7A-4422-AEF9-15495DF89941" dmnElementRef="_69B40AB2-BECD-4556-AB04-31A5AEB27124" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="360" y="340" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_4D93CF8E-3010-475F-AE48-ADF7191D5AFD" dmnElementRef="_074BC3D9-28E6-4D7C-95B8-304246F5B0A5" sourceElement="_D554D8AD-EF7A-4422-AEF9-15495DF89941" targetElement="_B156FBED-C2AE-4268-AF3F-400370A81D9C">
+        <di:waypoint x="440" y="380" />
         <di:waypoint x="260" y="240" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
