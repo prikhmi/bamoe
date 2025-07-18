@@ -320,6 +320,9 @@
     <dmn:informationRequirement id="_DE7A99B2-6CE4-4E96-88C2-6FF6B7580416">
       <dmn:requiredInput href="#_69B40AB2-BECD-4556-AB04-31A5AEB27124" />
     </dmn:informationRequirement>
+    <dmn:literalExpression id="_4817E3F5-DFC3-4D04-838F-39805F2C8EA3" typeRef="boolean" label="redFlagPresent">
+      <dmn:text>if redFlag = true then true else false</dmn:text>
+    </dmn:literalExpression>
   </dmn:decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_AC58068E-EBDD-4BAE-B203-63FF994E3276" name="DRG" useAlternativeInputDataShape="false">
@@ -352,6 +355,9 @@
             <kie:width>328</kie:width>
             <kie:width>232</kie:width>
             <kie:width>240</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_4817E3F5-DFC3-4D04-838F-39805F2C8EA3">
+            <kie:width>190</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
