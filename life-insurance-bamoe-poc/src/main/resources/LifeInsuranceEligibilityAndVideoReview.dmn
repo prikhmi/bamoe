@@ -4,8 +4,8 @@
   <dmn:inputData name="appFormData" id="_29FE52D6-42C5-432D-8DC0-B8A5534A47BC">
     <dmn:variable name="appFormData" id="_C4B9446F-F552-45A5-8525-E61CDDC5D1BC" typeRef="string" />
   </dmn:inputData>
-  <dmn:inputData name="teleVideoDeails" id="_F77F59D1-EAEA-4DF6-81D2-C6CAA78BB250">
-    <dmn:variable name="teleVideoDeails" id="_17C03372-4152-423D-AB2C-297A7EF23B5C" typeRef="string" />
+  <dmn:inputData name="teleVideoDetails" id="_F77F59D1-EAEA-4DF6-81D2-C6CAA78BB250">
+    <dmn:variable name="teleVideoDetails" id="_17C03372-4152-423D-AB2C-297A7EF23B5C" typeRef="string" />
   </dmn:inputData>
   <dmn:decision name="dataMatch" id="_CB5198FD-1288-4A4B-84B6-F1087D84313E">
     <dmn:variable name="dataMatch" id="_18BC2B3A-409F-4648-852B-E1D6D842E9A2" typeRef="boolean" />
@@ -15,11 +15,17 @@
     <dmn:informationRequirement id="_97AA9A3C-B1CF-4641-9A7B-A9B7CB41EB8C">
       <dmn:requiredInput href="#_F77F59D1-EAEA-4DF6-81D2-C6CAA78BB250" />
     </dmn:informationRequirement>
+    <dmn:literalExpression id="_CA33CB1F-4827-4864-B318-54326879543F" typeRef="boolean" label="dataMatch">
+      <dmn:text>if appFormData = teleVideoDetails then true else false</dmn:text>
+    </dmn:literalExpression>
   </dmn:decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_AC58068E-EBDD-4BAE-B203-63FF994E3276" name="DRG" useAlternativeInputDataShape="false">
       <di:extension>
         <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_CA33CB1F-4827-4864-B318-54326879543F">
+            <kie:width>190</kie:width>
+          </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="_E91BA6DF-5B06-45F9-A3CD-97B614531356" dmnElementRef="_29FE52D6-42C5-432D-8DC0-B8A5534A47BC" isCollapsed="false" isListedInputData="false">
