@@ -1,209 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="http://www.ibm.com/dmn/lifeinsurance" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" id="LifeInsuranceEligibility" name="LifeInsuranceEligibility" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="http://www.ibm.com/dmn/lifeinsurance">
-  <dmn:extensionElements/>
-  <dmn:inputData id="input_age" name="age">
-    <dmn:extensionElements/>
-    <dmn:variable id="var_age" name="age" typeRef="number"/>
+<?xml version="1.0" encoding="UTF-8" ?>
+<dmn:definitions xmlns:dmn="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns="http://www.ibm.com/dmn/lifeinsurance" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:feel="https://www.omg.org/spec/DMN/20230324/FEEL/" xmlns:kie="https://kie.org/dmn/extensions/1.0" id="LifeInsuranceEligibility" name="LifeInsuranceEligibility" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="http://www.ibm.com/dmn/lifeinsurance">
+  <dmn:extensionElements />
+  <dmn:inputData name="appFormData" id="_29FE52D6-42C5-432D-8DC0-B8A5534A47BC">
+    <dmn:variable name="appFormData" id="_C4B9446F-F552-45A5-8525-E61CDDC5D1BC" typeRef="string" />
   </dmn:inputData>
-  <dmn:inputData id="input_healthStatus" name="healthStatus">
-    <dmn:extensionElements/>
-    <dmn:variable id="var_healthStatus" name="healthStatus" typeRef="string"/>
+  <dmn:inputData name="teleVideoDeails" id="_F77F59D1-EAEA-4DF6-81D2-C6CAA78BB250">
+    <dmn:variable name="teleVideoDeails" id="_17C03372-4152-423D-AB2C-297A7EF23B5C" />
   </dmn:inputData>
-  <dmn:decision id="decision_riskCategory" name="RiskCategory">
-    <dmn:extensionElements/>
-    <dmn:variable id="var_riskCategory" name="RiskCategory" typeRef="string"/>
-    <dmn:informationRequirement id="_1E1F6497-084E-447F-AA36-D39D9AD5EB50">
-      <dmn:requiredInput href="#input_age"/>
+  <dmn:decision name="dataMatch" id="_CB5198FD-1288-4A4B-84B6-F1087D84313E">
+    <dmn:variable name="dataMatch" id="_18BC2B3A-409F-4648-852B-E1D6D842E9A2" />
+    <dmn:informationRequirement id="_9951C5CB-2DBB-4F86-A4FC-655D4E1712FB">
+      <dmn:requiredInput href="#_29FE52D6-42C5-432D-8DC0-B8A5534A47BC" />
     </dmn:informationRequirement>
-    <dmn:informationRequirement id="_C4DFBFA5-A46D-44C5-A81F-B3A4D6A7DB96">
-      <dmn:requiredInput href="#input_healthStatus"/>
+    <dmn:informationRequirement id="_97AA9A3C-B1CF-4641-9A7B-A9B7CB41EB8C">
+      <dmn:requiredInput href="#_F77F59D1-EAEA-4DF6-81D2-C6CAA78BB250" />
     </dmn:informationRequirement>
-    <dmn:decisionTable id="dt_riskCategory" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
-      <dmn:input id="input1">
-        <dmn:inputExpression id="expr_age" typeRef="number">
-          <dmn:text>age</dmn:text>
-        </dmn:inputExpression>
-      </dmn:input>
-      <dmn:input id="input2">
-        <dmn:inputExpression id="expr_healthStatus" typeRef="string">
-          <dmn:text>healthStatus</dmn:text>
-        </dmn:inputExpression>
-      </dmn:input>
-      <dmn:output id="output1"/>
-      <dmn:annotation name=""/>
-      <dmn:rule id="_0D5CA718-B0AC-4243-95C7-87DFF5564D5A">
-        <dmn:inputEntry id="ie1">
-          <dmn:text>&lt; 30</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="ie2">
-          <dmn:text>"Good"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="oe1">
-          <dmn:text>"Low"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_F4A234A6-FCC3-40B4-AFFF-B1F03C57ED46">
-        <dmn:inputEntry id="ie3">
-          <dmn:text>&lt; 30</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="ie4">
-          <dmn:text>"Average"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="oe2">
-          <dmn:text>"Medium"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_5FD5710E-A6D1-4B45-AA9C-BEBE8136F544">
-        <dmn:inputEntry id="ie5">
-          <dmn:text>&lt; 30</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="ie6">
-          <dmn:text>"Poor"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="oe3">
-          <dmn:text>"High"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_D5C672EF-BD04-4F2C-B110-90DF46092596">
-        <dmn:inputEntry id="ie7">
-          <dmn:text>[30..50]</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="ie8">
-          <dmn:text>"Good"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="oe4">
-          <dmn:text>"Medium"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_C3DFF32B-19E9-4F26-90C2-04A028BBB6E1">
-        <dmn:inputEntry id="ie9">
-          <dmn:text>[30..50]</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="ie10">
-          <dmn:text>"Average"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="oe5">
-          <dmn:text>"Medium"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_C480D642-EFC8-4BD5-BC06-15640D13AAEF">
-        <dmn:inputEntry id="ie11">
-          <dmn:text>[30..50]</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="ie12">
-          <dmn:text>"Poor"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="oe6">
-          <dmn:text>"High"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_A6EA7CC8-C6AD-46B4-9085-0C3732B828BB">
-        <dmn:inputEntry id="ie13">
-          <dmn:text>&gt; 50</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="ie14">
-          <dmn:text>-</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="oe7">
-          <dmn:text>"High"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-    </dmn:decisionTable>
-  </dmn:decision>
-  <dmn:decision id="decision_eligibility" name="Eligibility">
-    <dmn:extensionElements/>
-    <dmn:variable id="var_eligibility" name="Eligibility" typeRef="boolean"/>
-    <dmn:informationRequirement id="_51394B09-C82C-4B66-9522-813223778ED6">
-      <dmn:requiredDecision href="#decision_riskCategory"/>
-    </dmn:informationRequirement>
-    <dmn:literalExpression id="_DBCA4908-623D-4C99-A9B2-C261CC54268F">
-      <dmn:text>if RiskCategory = "High" then false else true</dmn:text>
-    </dmn:literalExpression>
   </dmn:decision>
   <dmndi:DMNDI>
-    <dmndi:DMNDiagram id="_AC58068E-EBDD-4BAE-B203-63FF994E3276" name="DRG">
+    <dmndi:DMNDiagram id="_AC58068E-EBDD-4BAE-B203-63FF994E3276" name="DRG" useAlternativeInputDataShape="false">
       <di:extension>
         <kie:ComponentsWidthsExtension>
-          <kie:ComponentWidths dmnElementRef="dt_riskCategory">
-            <kie:width>50</kie:width>
-            <kie:width>100</kie:width>
-            <kie:width>100</kie:width>
-            <kie:width>100</kie:width>
-            <kie:width>100</kie:width>
-          </kie:ComponentWidths>
-          <kie:ComponentWidths dmnElementRef="_DBCA4908-623D-4C99-A9B2-C261CC54268F">
-            <kie:width>190</kie:width>
-          </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
-      <dmndi:DMNShape id="dmnshape-drg-input_age" dmnElementRef="input_age" isCollapsed="false">
-        <dmndi:DMNStyle>
-          <dmndi:FillColor red="255" green="255" blue="255"/>
-          <dmndi:StrokeColor red="0" green="0" blue="0"/>
-          <dmndi:FontColor red="0" green="0" blue="0"/>
-        </dmndi:DMNStyle>
-        <dc:Bounds x="50" y="400" width="100" height="50"/>
-        <dmndi:DMNLabel/>
+      <dmndi:DMNShape id="_E91BA6DF-5B06-45F9-A3CD-97B614531356" dmnElementRef="_29FE52D6-42C5-432D-8DC0-B8A5534A47BC" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="40" y="340" width="160" height="80" />
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-drg-input_healthStatus" dmnElementRef="input_healthStatus" isCollapsed="false">
-        <dmndi:DMNStyle>
-          <dmndi:FillColor red="255" green="255" blue="255"/>
-          <dmndi:StrokeColor red="0" green="0" blue="0"/>
-          <dmndi:FontColor red="0" green="0" blue="0"/>
-        </dmndi:DMNStyle>
-        <dc:Bounds x="225" y="400" width="100" height="50"/>
-        <dmndi:DMNLabel/>
+      <dmndi:DMNShape id="_0CFD66E0-CBCC-411B-BAE9-58FF6A047802" dmnElementRef="_F77F59D1-EAEA-4DF6-81D2-C6CAA78BB250" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="280" y="340" width="160" height="80" />
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-drg-decision_riskCategory" dmnElementRef="decision_riskCategory" isCollapsed="false">
-        <dmndi:DMNStyle>
-          <dmndi:FillColor red="255" green="255" blue="255"/>
-          <dmndi:StrokeColor red="0" green="0" blue="0"/>
-          <dmndi:FontColor red="0" green="0" blue="0"/>
-        </dmndi:DMNStyle>
-        <dc:Bounds x="137" y="240" width="100" height="50"/>
-        <dmndi:DMNLabel/>
+      <dmndi:DMNShape id="_B156FBED-C2AE-4268-AF3F-400370A81D9C" dmnElementRef="_CB5198FD-1288-4A4B-84B6-F1087D84313E" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="180" y="200" width="160" height="80" />
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-drg-decision_eligibility" dmnElementRef="decision_eligibility" isCollapsed="false">
-        <dmndi:DMNStyle>
-          <dmndi:FillColor red="255" green="255" blue="255"/>
-          <dmndi:StrokeColor red="0" green="0" blue="0"/>
-          <dmndi:FontColor red="0" green="0" blue="0"/>
-        </dmndi:DMNStyle>
-        <dc:Bounds x="137" y="50" width="100" height="50"/>
-        <dmndi:DMNLabel/>
-      </dmndi:DMNShape>
-      <dmndi:DMNEdge id="dmnedge-drg-_1E1F6497-084E-447F-AA36-D39D9AD5EB50" dmnElementRef="_1E1F6497-084E-447F-AA36-D39D9AD5EB50">
-        <di:waypoint x="100" y="425"/>
-        <di:waypoint x="187" y="265"/>
+      <dmndi:DMNEdge id="_9A9BCCE5-B5D4-423B-8208-169C0F24F15D" dmnElementRef="_9951C5CB-2DBB-4F86-A4FC-655D4E1712FB" sourceElement="_E91BA6DF-5B06-45F9-A3CD-97B614531356" targetElement="_B156FBED-C2AE-4268-AF3F-400370A81D9C">
+        <di:waypoint x="120" y="380" />
+        <di:waypoint x="260" y="240" />
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="dmnedge-drg-_C4DFBFA5-A46D-44C5-A81F-B3A4D6A7DB96" dmnElementRef="_C4DFBFA5-A46D-44C5-A81F-B3A4D6A7DB96">
-        <di:waypoint x="275" y="425"/>
-        <di:waypoint x="187" y="265"/>
-      </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="dmnedge-drg-_51394B09-C82C-4B66-9522-813223778ED6" dmnElementRef="_51394B09-C82C-4B66-9522-813223778ED6">
-        <di:waypoint x="187" y="265"/>
-        <di:waypoint x="187" y="75"/>
+      <dmndi:DMNEdge id="_2FAEB476-B241-4F68-841B-F7BA99446721" dmnElementRef="_97AA9A3C-B1CF-4641-9A7B-A9B7CB41EB8C" sourceElement="_0CFD66E0-CBCC-411B-BAE9-58FF6A047802" targetElement="_B156FBED-C2AE-4268-AF3F-400370A81D9C">
+        <di:waypoint x="360" y="380" />
+        <di:waypoint x="260" y="240" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
