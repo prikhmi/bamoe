@@ -8,7 +8,7 @@
     <dmn:variable name="teleVideoDeails" id="_17C03372-4152-423D-AB2C-297A7EF23B5C" typeRef="string" />
   </dmn:inputData>
   <dmn:decision name="dataMatch" id="_CB5198FD-1288-4A4B-84B6-F1087D84313E">
-    <dmn:variable name="dataMatch" id="_18BC2B3A-409F-4648-852B-E1D6D842E9A2" />
+    <dmn:variable name="dataMatch" id="_18BC2B3A-409F-4648-852B-E1D6D842E9A2" typeRef="boolean" />
     <dmn:informationRequirement id="_9951C5CB-2DBB-4F86-A4FC-655D4E1712FB">
       <dmn:requiredInput href="#_29FE52D6-42C5-432D-8DC0-B8A5534A47BC" />
     </dmn:informationRequirement>
