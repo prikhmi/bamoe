@@ -93,6 +93,63 @@
   <dmn:inputData name="transcriptDetails" id="_F17548A0-35E3-43A8-B1E6-CB4933DCA55F">
     <dmn:variable name="transcriptDetails" id="_181F79F9-31DF-44C6-9B3E-36809BB36663" typeRef="string" />
   </dmn:inputData>
+  <dmn:inputData name="loginType" id="_A59BC2F5-C731-4B92-A45A-E18F89CF3C32">
+    <dmn:variable name="loginType" id="_DA569093-5F63-490A-A714-8373A1BE343A" typeRef="string" />
+  </dmn:inputData>
+  <dmn:inputData name="qualification" id="_E9166442-526D-43F5-AE69-021C633FEEB5">
+    <dmn:variable name="qualification" id="_40E39D53-22D6-4E14-9221-99589C6990E0" typeRef="string" />
+  </dmn:inputData>
+  <dmn:decision name="loginStatus" id="_A5655272-4F50-4890-AB07-0DF07A1DA39C">
+    <dmn:variable name="loginStatus" id="_3B49E028-061D-4183-82C0-8620B55CB567" typeRef="string" />
+    <dmn:informationRequirement id="_A88E0629-6213-4E2C-AE26-4F37D9C7DEB1">
+      <dmn:requiredInput href="#_A59BC2F5-C731-4B92-A45A-E18F89CF3C32" />
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_5FFAEAA6-B267-436D-8DC8-17ECD1C5B02A">
+      <dmn:requiredInput href="#_E9166442-526D-43F5-AE69-021C633FEEB5" />
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_E3E4D92E-A582-4B46-968D-D72978022740" typeRef="string" hitPolicy="UNIQUE" label="loginStatus">
+      <dmn:input id="_474805F2-31C8-4443-B861-B18CB66C9FDD">
+        <dmn:inputExpression id="_D5287BB4-6846-4587-8A80-A239DB5B0DFC" typeRef="string">
+          <dmn:text>loginType</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_C7E5EBC4-1164-4537-B361-2870C4F5B620">
+        <dmn:inputExpression id="_DD7FFE3C-1882-4A95-9DE9-363AE45E68CB" typeRef="string">
+          <dmn:text>qualification</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_8251E2C1-369D-4956-8B0C-9034AAA10FFC" />
+      <dmn:annotation name="Annotations" />
+      <dmn:rule id="_C30C2B35-613C-4AA8-8E87-DEE626348D91">
+        <dmn:inputEntry id="_5F7DCAB8-5ECC-4561-BD9D-B6FD6B3982BA">
+          <dmn:text>&quot;App&quot;</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_095910E9-ACD6-40E1-8C36-C6D0C396BCC5">
+          <dmn:text>&quot;Graduate&quot;</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_6B4D49CB-F9FA-4421-A8FD-874A4DFA5091">
+          <dmn:text>&quot;Pass&quot;</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>// Your annotations here</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_E92172CA-7DE6-4EFA-9C67-77CF5D6C4834">
+        <dmn:inputEntry id="_0472ED33-E969-45FF-A6AE-ACA8345E68C1">
+          <dmn:text>&quot;Scrutiny&quot;</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_8CA02D7A-9662-4018-8F01-B5F213F8B280">
+          <dmn:text>&quot;Other&quot;</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_D3CC9550-C50A-4FD1-9FA0-6D91635B5EAD">
+          <dmn:text>&quot;Fail&quot;</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_AC58068E-EBDD-4BAE-B203-63FF994E3276" name="DRG" useAlternativeInputDataShape="false">
       <di:extension>
@@ -106,6 +163,13 @@
             <kie:width>123</kie:width>
             <kie:width>118</kie:width>
             <kie:width>100</kie:width>
+            <kie:width>240</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_E3E4D92E-A582-4B46-968D-D72978022740">
+            <kie:width>60</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>118</kie:width>
             <kie:width>240</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
@@ -147,6 +211,23 @@
       <dmndi:DMNEdge id="_B9BC42FC-24B6-469C-9D17-4D4501E1C767" dmnElementRef="_832A4454-CA0E-468B-BB28-478082580569" sourceElement="_A741B470-D685-49B2-A799-7A59073F8351" targetElement="_A3989C1D-16DD-4F5A-84BF-E8ECFFF98650">
         <di:waypoint x="580" y="260" />
         <di:waypoint x="260" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="_F2C3DABC-D109-4AE0-95C8-779F9E7CE27D" dmnElementRef="_A59BC2F5-C731-4B92-A45A-E18F89CF3C32" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="720" y="240" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_1F3424BE-CFAC-4CD8-8F35-088B07A4069A" dmnElementRef="_E9166442-526D-43F5-AE69-021C633FEEB5" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="980" y="240" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_34BFD366-AC20-4754-84E0-9CAF3DF9D52C" dmnElementRef="_A5655272-4F50-4890-AB07-0DF07A1DA39C" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="820" y="80" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_5B76EA80-3453-4B18-B4FD-0321CA937432" dmnElementRef="_A88E0629-6213-4E2C-AE26-4F37D9C7DEB1" sourceElement="_F2C3DABC-D109-4AE0-95C8-779F9E7CE27D" targetElement="_34BFD366-AC20-4754-84E0-9CAF3DF9D52C">
+        <di:waypoint x="800" y="280" />
+        <di:waypoint x="900" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="_EC3E24EB-5A9F-457E-94C9-F44487DBB876" dmnElementRef="_5FFAEAA6-B267-436D-8DC8-17ECD1C5B02A" sourceElement="_1F3424BE-CFAC-4CD8-8F35-088B07A4069A" targetElement="_34BFD366-AC20-4754-84E0-9CAF3DF9D52C">
+        <di:waypoint x="1060" y="280" />
+        <di:waypoint x="900" y="120" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
