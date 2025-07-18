@@ -23,8 +23,11 @@
 </dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
-  <dmn:decision name="New Decision" id="_0D5B5472-C7E3-4D32-9E72-16844C08B2DA">
-    <dmn:variable name="New Decision" id="_D148C278-44FA-40D7-AA6D-1300F0DD4B37" />
+  <dmn:decision name="Tele/Video call detail Rules" id="_0D5B5472-C7E3-4D32-9E72-16844C08B2DA">
+    <dmn:variable name="Tele/Video call detail Rules" id="_D148C278-44FA-40D7-AA6D-1300F0DD4B37" />
+    <dmn:informationRequirement id="_4E3F44B0-A296-423E-AE7E-77C77ABAD718">
+      <dmn:requiredDecision href="#_CB5198FD-1288-4A4B-84B6-F1087D84313E" />
+    </dmn:informationRequirement>
   </dmn:decision>
   <dmn:inputData name="redFlag" id="_69B40AB2-BECD-4556-AB04-31A5AEB27124">
     <dmn:variable name="redFlag" id="_A13A175E-4D44-4DE2-BF9D-DE8B667EE126" typeRef="boolean" />
@@ -64,6 +67,10 @@
       <dmndi:DMNEdge id="_4D93CF8E-3010-475F-AE48-ADF7191D5AFD" dmnElementRef="_074BC3D9-28E6-4D7C-95B8-304246F5B0A5" sourceElement="_D554D8AD-EF7A-4422-AEF9-15495DF89941" targetElement="_B156FBED-C2AE-4268-AF3F-400370A81D9C">
         <di:waypoint x="440" y="380" />
         <di:waypoint x="260" y="240" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="_3DE1CE06-308F-4DB3-9DA7-8F4CA8838CEE" dmnElementRef="_4E3F44B0-A296-423E-AE7E-77C77ABAD718" sourceElement="_B156FBED-C2AE-4268-AF3F-400370A81D9C" targetElement="_A3989C1D-16DD-4F5A-84BF-E8ECFFF98650">
+        <di:waypoint x="260" y="240" />
+        <di:waypoint x="260" y="120" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
