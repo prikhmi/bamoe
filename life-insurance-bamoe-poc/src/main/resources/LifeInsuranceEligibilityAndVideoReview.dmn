@@ -169,7 +169,9 @@
           <dmn:text>videoServiceCallStatus</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:output id="_908D5D21-4258-4B0C-A85C-5851FB239586" />
+      <dmn:output id="_1446E66E-FD5C-4F61-9F5B-4F7D9821E84F" name="videoCallStatus" typeRef="string" />
+      <dmn:output id="_2BCA1A17-BED5-4C80-A37E-2A8BFD9D6E64" name="VideoServiceFailureMessage" typeRef="string" />
+      <dmn:output id="_908D5D21-4258-4B0C-A85C-5851FB239586" name="routeToUW" typeRef="string" />
       <dmn:annotation name="Annotations" />
       <dmn:rule id="_13FAA7A2-F79F-465E-B7BD-26AAD5609D57">
         <dmn:inputEntry id="_9E1DAA2C-D7A7-4AA7-9DD9-0F41FB9255DE">
@@ -178,6 +180,12 @@
         <dmn:inputEntry id="_D350BED8-036A-4E42-947F-F15ED4FD5A81">
           <dmn:text>-</dmn:text>
         </dmn:inputEntry>
+        <dmn:outputEntry id="_DB8660DC-BE61-4926-89B1-E098C12BDFEF">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_3B85590D-5FDF-4A2A-9CF9-81B002AA22E3">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
         <dmn:outputEntry id="_00C0BA2F-BE32-4266-9071-B0E466D57F3C">
           <dmn:text></dmn:text>
         </dmn:outputEntry>
@@ -219,7 +227,9 @@
             <kie:width>60</kie:width>
             <kie:width>118</kie:width>
             <kie:width>154</kie:width>
-            <kie:width>118</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>232</kie:width>
             <kie:width>240</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
