@@ -28,9 +28,15 @@
     <dmn:informationRequirement id="_4E3F44B0-A296-423E-AE7E-77C77ABAD718">
       <dmn:requiredDecision href="#_CB5198FD-1288-4A4B-84B6-F1087D84313E" />
     </dmn:informationRequirement>
+    <dmn:informationRequirement id="_832A4454-CA0E-468B-BB28-478082580569">
+      <dmn:requiredInput href="#_F17548A0-35E3-43A8-B1E6-CB4933DCA55F" />
+    </dmn:informationRequirement>
   </dmn:decision>
   <dmn:inputData name="redFlag" id="_69B40AB2-BECD-4556-AB04-31A5AEB27124">
     <dmn:variable name="redFlag" id="_A13A175E-4D44-4DE2-BF9D-DE8B667EE126" typeRef="boolean" />
+  </dmn:inputData>
+  <dmn:inputData name="transcriptDetails" id="_F17548A0-35E3-43A8-B1E6-CB4933DCA55F">
+    <dmn:variable name="transcriptDetails" id="_181F79F9-31DF-44C6-9B3E-36809BB36663" typeRef="string" />
   </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_AC58068E-EBDD-4BAE-B203-63FF994E3276" name="DRG" useAlternativeInputDataShape="false">
@@ -70,6 +76,13 @@
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="_3DE1CE06-308F-4DB3-9DA7-8F4CA8838CEE" dmnElementRef="_4E3F44B0-A296-423E-AE7E-77C77ABAD718" sourceElement="_B156FBED-C2AE-4268-AF3F-400370A81D9C" targetElement="_A3989C1D-16DD-4F5A-84BF-E8ECFFF98650">
         <di:waypoint x="260" y="240" />
+        <di:waypoint x="260" y="120" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="_A741B470-D685-49B2-A799-7A59073F8351" dmnElementRef="_F17548A0-35E3-43A8-B1E6-CB4933DCA55F" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="500" y="220" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_B9BC42FC-24B6-469C-9D17-4D4501E1C767" dmnElementRef="_832A4454-CA0E-468B-BB28-478082580569" sourceElement="_A741B470-D685-49B2-A799-7A59073F8351" targetElement="_A3989C1D-16DD-4F5A-84BF-E8ECFFF98650">
+        <di:waypoint x="580" y="260" />
         <di:waypoint x="260" y="120" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
