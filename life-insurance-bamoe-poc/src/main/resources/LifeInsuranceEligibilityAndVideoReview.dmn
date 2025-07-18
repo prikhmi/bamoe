@@ -150,6 +150,49 @@
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
+  <dmn:decision name="Video Service Call Reject Rules" id="_DD804DED-14F5-44DE-BFAF-E7EED16EE98D">
+    <dmn:variable name="Video Service Call Reject Rules" id="_4093D710-D5C2-484C-A5D1-D36A470AB506" typeRef="context" />
+    <dmn:informationRequirement id="_DEA2D432-64C1-4F7B-A85D-ECCE4F26BB3E">
+      <dmn:requiredInput href="#_7D8182BA-C7BE-4FF0-9ECC-618A959A0629" />
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_71994A1A-43F0-46A0-B761-F8C6DDF2C67E">
+      <dmn:requiredInput href="#_7B1C9004-07E6-40BB-AF97-2E60F39CA0E9" />
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_746E52DB-F505-4227-920E-71FF776979E0" typeRef="context" hitPolicy="UNIQUE" label="Video Service Call Reject Rules">
+      <dmn:input id="_9D2BA094-FC1F-489A-8347-834503423A3D">
+        <dmn:inputExpression id="_C0E5DFDE-B164-4AF7-B2AC-DAFB753E9F9F" typeRef="string">
+          <dmn:text>videoServiceCall</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_CD54DE5F-7D49-4505-B083-D5A38FD6A1CA">
+        <dmn:inputExpression id="_A80E7FFC-BD55-43C3-B18A-FB52AD2F1991" typeRef="string">
+          <dmn:text>videoServiceCallStatus</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_908D5D21-4258-4B0C-A85C-5851FB239586" />
+      <dmn:annotation name="Annotations" />
+      <dmn:rule id="_13FAA7A2-F79F-465E-B7BD-26AAD5609D57">
+        <dmn:inputEntry id="_9E1DAA2C-D7A7-4AA7-9DD9-0F41FB9255DE">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_D350BED8-036A-4E42-947F-F15ED4FD5A81">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_00C0BA2F-BE32-4266-9071-B0E466D57F3C">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>// Your annotations here</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:inputData name="videoServiceCall" id="_7D8182BA-C7BE-4FF0-9ECC-618A959A0629">
+    <dmn:variable name="videoServiceCall" id="_D8731656-69F1-449A-8A40-C30A1E7E1979" typeRef="string" />
+  </dmn:inputData>
+  <dmn:inputData name="videoServiceCallStatus" id="_7B1C9004-07E6-40BB-AF97-2E60F39CA0E9">
+    <dmn:variable name="videoServiceCallStatus" id="_C89BA8E9-1971-487B-A8C7-D9A92144640D" typeRef="string" />
+  </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_AC58068E-EBDD-4BAE-B203-63FF994E3276" name="DRG" useAlternativeInputDataShape="false">
       <di:extension>
@@ -169,6 +212,13 @@
             <kie:width>60</kie:width>
             <kie:width>118</kie:width>
             <kie:width>118</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>240</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_746E52DB-F505-4227-920E-71FF776979E0">
+            <kie:width>60</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>154</kie:width>
             <kie:width>118</kie:width>
             <kie:width>240</kie:width>
           </kie:ComponentWidths>
@@ -213,21 +263,38 @@
         <di:waypoint x="-20" y="80" />
       </dmndi:DMNEdge>
       <dmndi:DMNShape id="_F2C3DABC-D109-4AE0-95C8-779F9E7CE27D" dmnElementRef="_A59BC2F5-C731-4B92-A45A-E18F89CF3C32" isCollapsed="false" isListedInputData="false">
-        <dc:Bounds x="480" y="300" width="160" height="80" />
+        <dc:Bounds x="420" y="300" width="160" height="80" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="_1F3424BE-CFAC-4CD8-8F35-088B07A4069A" dmnElementRef="_E9166442-526D-43F5-AE69-021C633FEEB5" isCollapsed="false" isListedInputData="false">
-        <dc:Bounds x="780" y="300" width="160" height="80" />
+        <dc:Bounds x="660" y="300" width="160" height="80" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="_34BFD366-AC20-4754-84E0-9CAF3DF9D52C" dmnElementRef="_A5655272-4F50-4890-AB07-0DF07A1DA39C" isCollapsed="false" isListedInputData="false">
-        <dc:Bounds x="640" y="20" width="160" height="80" />
+        <dc:Bounds x="560" y="40" width="160" height="80" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="_5B76EA80-3453-4B18-B4FD-0321CA937432" dmnElementRef="_A88E0629-6213-4E2C-AE26-4F37D9C7DEB1" sourceElement="_F2C3DABC-D109-4AE0-95C8-779F9E7CE27D" targetElement="_34BFD366-AC20-4754-84E0-9CAF3DF9D52C">
-        <di:waypoint x="560" y="340" />
-        <di:waypoint x="720" y="60" />
+        <di:waypoint x="500" y="340" />
+        <di:waypoint x="640" y="80" />
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="_EC3E24EB-5A9F-457E-94C9-F44487DBB876" dmnElementRef="_5FFAEAA6-B267-436D-8DC8-17ECD1C5B02A" sourceElement="_1F3424BE-CFAC-4CD8-8F35-088B07A4069A" targetElement="_34BFD366-AC20-4754-84E0-9CAF3DF9D52C">
-        <di:waypoint x="860" y="340" />
-        <di:waypoint x="720" y="60" />
+        <di:waypoint x="740" y="340" />
+        <di:waypoint x="640" y="80" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="_3CB62CAD-A444-49A4-A364-5C65204A160B" dmnElementRef="_DD804DED-14F5-44DE-BFAF-E7EED16EE98D" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="1060" y="40" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_A46B857D-E835-4B84-839A-4BED0758E668" dmnElementRef="_7D8182BA-C7BE-4FF0-9ECC-618A959A0629" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="920" y="280" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_806C618D-01E2-47E7-A06B-7D590AFDD4D7" dmnElementRef="_7B1C9004-07E6-40BB-AF97-2E60F39CA0E9" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="1160" y="280" width="200" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_56420F3A-4596-4A4B-A44D-661A00BE8BD4" dmnElementRef="_DEA2D432-64C1-4F7B-A85D-ECCE4F26BB3E" sourceElement="_A46B857D-E835-4B84-839A-4BED0758E668" targetElement="_3CB62CAD-A444-49A4-A364-5C65204A160B">
+        <di:waypoint x="1000" y="320" />
+        <di:waypoint x="1140" y="80" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="_2DBC9AAE-55A4-499D-8DDE-0F348EC3448A" dmnElementRef="_71994A1A-43F0-46A0-B761-F8C6DDF2C67E" sourceElement="_806C618D-01E2-47E7-A06B-7D590AFDD4D7" targetElement="_3CB62CAD-A444-49A4-A364-5C65204A160B">
+        <di:waypoint x="1260" y="320" />
+        <di:waypoint x="1140" y="80" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
