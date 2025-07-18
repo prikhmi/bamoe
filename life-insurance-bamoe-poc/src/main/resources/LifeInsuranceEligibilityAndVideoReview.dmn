@@ -24,7 +24,7 @@
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision name="Tele/Video call detail Rules" id="_0D5B5472-C7E3-4D32-9E72-16844C08B2DA">
-    <dmn:variable name="Tele/Video call detail Rules" id="_D148C278-44FA-40D7-AA6D-1300F0DD4B37" />
+    <dmn:variable name="Tele/Video call detail Rules" id="_D148C278-44FA-40D7-AA6D-1300F0DD4B37" typeRef="context" />
     <dmn:informationRequirement id="_4E3F44B0-A296-423E-AE7E-77C77ABAD718">
       <dmn:requiredDecision href="#_CB5198FD-1288-4A4B-84B6-F1087D84313E" />
     </dmn:informationRequirement>
