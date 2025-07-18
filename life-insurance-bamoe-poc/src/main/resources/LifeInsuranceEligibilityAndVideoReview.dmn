@@ -68,6 +68,23 @@
           <dmn:text>// Your annotations here</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
+      <dmn:rule id="_31F5D37C-FBB0-48EA-880B-BA0DDE1F9BBE">
+        <dmn:inputEntry id="_B3FED259-50A0-48F6-B822-ED063343B11F">
+          <dmn:text>&quot;Yes&quot;</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_453A28D4-555C-4250-8B7B-735734637B82">
+          <dmn:text>&quot;Sub Standard&quot;</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_A4EA8481-D45C-4E7B-986D-AB599B72AAF3">
+          <dmn:text>&quot;Fail&quot;</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_108420CE-3285-41BE-8E99-50370D651134">
+          <dmn:text>&quot;&quot;</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
       <dmn:rule id="_246DF50B-F25C-4E18-A815-701C340DFD6A">
         <dmn:inputEntry id="_45982671-B07A-4F52-B668-0E0770A9F03E">
           <dmn:text>&quot;No&quot;</dmn:text>
@@ -79,6 +96,23 @@
           <dmn:text>&quot;Fail&quot;</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_DA936B81-19B9-4018-9993-2D5CB8152326">
+          <dmn:text>&quot;Required manual underwriting ; Occupation/Education qualification mismatch with TELE/Video Call&quot;</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_1B6D58B5-FA3D-4553-9867-F55FD4FEEFB9">
+        <dmn:inputEntry id="_BE901464-C34E-4699-9A4C-8DD3D4BEF713">
+          <dmn:text>&quot;No&quot;</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_71350129-6E16-401F-867A-BF2F4839BA56">
+          <dmn:text>&quot;Sub Standard&quot;</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_D0813709-86C7-4D77-8AC5-531961CCDF59">
+          <dmn:text>&quot;Fail&quot;</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_20E7865F-EC4D-4BA3-9C2D-744B994083C1">
           <dmn:text>&quot;Required manual underwriting ; Occupation/Education qualification mismatch with TELE/Video Call&quot;</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
