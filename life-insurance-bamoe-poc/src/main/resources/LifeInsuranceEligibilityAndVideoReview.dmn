@@ -175,22 +175,42 @@
       <dmn:annotation name="Annotations" />
       <dmn:rule id="_13FAA7A2-F79F-465E-B7BD-26AAD5609D57">
         <dmn:inputEntry id="_9E1DAA2C-D7A7-4AA7-9DD9-0F41FB9255DE">
-          <dmn:text>-</dmn:text>
+          <dmn:text>&quot;Approved&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_D350BED8-036A-4E42-947F-F15ED4FD5A81">
-          <dmn:text>-</dmn:text>
+          <dmn:text>&quot;Suspicious observation&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_DB8660DC-BE61-4926-89B1-E098C12BDFEF">
-          <dmn:text></dmn:text>
+          <dmn:text>&quot;Fail&quot;</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_3B85590D-5FDF-4A2A-9CF9-81B002AA22E3">
-          <dmn:text></dmn:text>
+          <dmn:text>&quot;Required manual underwriting ;  Suspicious observation in Video Service Call&quot;</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_00C0BA2F-BE32-4266-9071-B0E466D57F3C">
-          <dmn:text></dmn:text>
+          <dmn:text>&quot;Yes&quot;</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text>// Your annotations here</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_18293670-B820-48A3-AE0A-DC7B9B253E46">
+        <dmn:inputEntry id="_14E26271-BDF9-4D5F-B268-7332FB73AD4F">
+          <dmn:text>&quot;Approved&quot;</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_BBBE96FA-E946-41B8-B1D9-CE0B7155B82A">
+          <dmn:text>&quot;&quot;</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_62D683EB-EF88-4666-84E8-F23685701E6D">
+          <dmn:text>&quot;Pass&quot;</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_2CE7CA2D-C0C0-452F-BAA0-125ACD3241A0">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_9C0E2C9D-03FD-4C40-98BE-248646184913">
+          <dmn:text></dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text></dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
     </dmn:decisionTable>
