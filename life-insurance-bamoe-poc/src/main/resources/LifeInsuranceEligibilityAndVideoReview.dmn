@@ -70,7 +70,7 @@
       </dmn:rule>
       <dmn:rule id="_246DF50B-F25C-4E18-A815-701C340DFD6A">
         <dmn:inputEntry id="_45982671-B07A-4F52-B668-0E0770A9F03E">
-          <dmn:text>-&quot;No&quot;</dmn:text>
+          <dmn:text>&quot;No&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_F64E5EEB-AF55-4BDE-85AE-3B9EA2125843">
           <dmn:text>&quot;Standard&quot;</dmn:text>
