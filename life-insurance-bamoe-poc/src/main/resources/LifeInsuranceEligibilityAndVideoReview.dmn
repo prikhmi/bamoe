@@ -19,7 +19,8 @@
       <dmn:requiredInput href="#_69B40AB2-BECD-4556-AB04-31A5AEB27124" />
     </dmn:informationRequirement>
     <dmn:literalExpression id="_CA33CB1F-4827-4864-B318-54326879543F" typeRef="boolean" label="dataMatch">
-      <dmn:text>if appFormData = teleVideoDetails then true else false</dmn:text>
+      <dmn:text>if appFormData = teleVideoDetails or redFlag = true then true else false
+</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:decision name="New Decision" id="_0D5B5472-C7E3-4D32-9E72-16844C08B2DA">
