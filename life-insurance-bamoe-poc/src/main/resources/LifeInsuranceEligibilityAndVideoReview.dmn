@@ -385,15 +385,15 @@
       <di:extension>
         <kie:ComponentsWidthsExtension>
           <kie:ComponentWidths dmnElementRef="_CA33CB1F-4827-4864-B318-54326879543F">
-            <kie:width>190</kie:width>
+            <kie:width>420</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_89CC47FE-1B6A-4FF8-B2A3-4F778204FC5B">
             <kie:width>60</kie:width>
             <kie:width>118</kie:width>
-            <kie:width>123</kie:width>
+            <kie:width>138</kie:width>
             <kie:width>100</kie:width>
-            <kie:width>118</kie:width>
-            <kie:width>100</kie:width>
+            <kie:width>193</kie:width>
+            <kie:width>165</kie:width>
             <kie:width>240</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_E3E4D92E-A582-4B46-968D-D72978022740">
