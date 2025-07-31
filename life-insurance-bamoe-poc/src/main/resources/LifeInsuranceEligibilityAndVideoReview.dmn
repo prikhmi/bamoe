@@ -266,7 +266,7 @@
           <dmn:text>&quot;App&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_B3DF0E43-38B8-421F-AB98-0BE7F7894F65">
-          <dmn:text>&quot;Other&quot;</dmn:text>
+          <dmn:text>!= &quot;Graduate&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_1B2F304D-7CD7-4FC2-8922-9CB1577FBD48">
           <dmn:text>&quot;Fail&quot;</dmn:text>
@@ -280,7 +280,7 @@
           <dmn:text>&quot;Scrutiny&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_A569D161-296F-43A6-9A06-5D6CC70A79AF">
-          <dmn:text>&quot;Other&quot;</dmn:text>
+          <dmn:text>!= &quot;Graduate&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_5EDFDF9D-5FF7-41F0-8264-8973D076F568">
           <dmn:text>&quot;Fail&quot;</dmn:text>
@@ -294,7 +294,7 @@
           <dmn:text>&quot;UW&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_2B1F56D3-B2FA-43BD-8C2D-A92F41428AD0">
-          <dmn:text>&quot;Other&quot;</dmn:text>
+          <dmn:text>!= &quot;Graduate&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_AB020CDC-9665-45F9-A821-9D952C88E819">
           <dmn:text>&quot;Fail&quot;</dmn:text>
@@ -410,7 +410,7 @@
           <kie:ComponentWidths dmnElementRef="_E3E4D92E-A582-4B46-968D-D72978022740">
             <kie:width>60</kie:width>
             <kie:width>118</kie:width>
-            <kie:width>118</kie:width>
+            <kie:width>166</kie:width>
             <kie:width>118</kie:width>
             <kie:width>240</kie:width>
           </kie:ComponentWidths>
