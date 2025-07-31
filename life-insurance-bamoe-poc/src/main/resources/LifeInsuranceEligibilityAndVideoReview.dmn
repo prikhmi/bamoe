@@ -238,7 +238,7 @@
           <dmn:text>&quot;Scrutiny&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_8CA02D7A-9662-4018-8F01-B5F213F8B280">
-          <dmn:text>&quot;Btech&quot;</dmn:text>
+          <dmn:text>&quot;Graduate&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_D3CC9550-C50A-4FD1-9FA0-6D91635B5EAD">
           <dmn:text>&quot;Pass&quot;</dmn:text>
@@ -252,7 +252,7 @@
           <dmn:text>&quot;UW&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_0BE18134-6636-4030-B749-8A9ED9BD1E3C">
-          <dmn:text>&quot;Btech&quot;</dmn:text>
+          <dmn:text>&quot;Graduate&quot;</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_B2D60A8F-EA70-4501-98EF-2BF9A33D8F96">
           <dmn:text>&quot;Pass&quot;</dmn:text>
