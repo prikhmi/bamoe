@@ -54,13 +54,13 @@
           <text>&quot;Indian&quot;</text>
         </inputEntry>
         <inputEntry id="_898C117A-11AC-45A4-A336-2F80E69A1F77">
-          <text>&quot;Agency&quot;</text>
+          <text>&quot;ULIP&quot;</text>
         </inputEntry>
         <inputEntry id="_4CC67B4D-DF34-4DDF-8902-8A2F5A53B616">
-          <text>&quot;East&quot;</text>
+          <text>&quot;Agency&quot;</text>
         </inputEntry>
         <inputEntry id="_D4098384-E6B2-4EE7-BA37-92247D95CE68">
-          <text>&quot;ULIP&quot;</text>
+          <text>&quot;East&quot;</text>
         </inputEntry>
         <inputEntry id="_0B9BF2B9-12E3-4FB0-89F4-0E5CC8BC4822">
           <text>&lt;=2500000</text>
@@ -77,13 +77,13 @@
           <text>&quot;Indian&quot;</text>
         </inputEntry>
         <inputEntry id="_63D49FFE-A9EF-4E97-905F-152BD31A6EB7">
-          <text>&quot;Agency&quot;</text>
+          <text>&quot;TRAD&quot;</text>
         </inputEntry>
         <inputEntry id="_777685BE-FC08-41AA-8B67-9E17D468700F">
-          <text>&quot;East&quot;</text>
+          <text>&quot;Agency&quot;</text>
         </inputEntry>
         <inputEntry id="_07027523-8DA0-46E4-9009-2A53090BF717">
-          <text>&quot;TRAD&quot;</text>
+          <text>&quot;West&quot;</text>
         </inputEntry>
         <inputEntry id="_EBDFD9DF-36F3-4E5D-81FA-284C4567B24F">
           <text>&lt;=2500000</text>
@@ -109,6 +109,12 @@
   <inputData name="sa" id="_3C9DF998-2147-4FF9-BFE4-E285916F7D64">
     <variable name="sa" id="_3240E586-B968-4871-B71C-F011F522B59E" typeRef="number" />
   </inputData>
+  <decision name="New Decision" id="_B5B21A07-4A45-40B1-90CE-0BEAB1ED7D3E">
+    <variable name="New Decision" id="_D38FEBD8-F822-41CA-803B-F9A80B294AF5" />
+    <informationRequirement id="_1B766173-AF29-45F0-A804-38CB65C3DC5D">
+      <requiredDecision href="#_532EB1AD-B82D-440B-AB20-299A6C81E4E5" />
+    </informationRequirement>
+  </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_64C967F0-F3EB-420F-A6AE-2E15532CA92A" name="Default DRD" useAlternativeInputDataShape="false">
       <di:extension>
@@ -162,6 +168,13 @@
       <dmndi:DMNEdge id="_606A6708-689F-4AEE-AEE8-6002EDA191C1" dmnElementRef="_C3BFFA88-C15C-4142-9288-C1C8FE0EBAFF" sourceElement="_97C8509F-B4A3-49C9-84CC-8CADD1866A9B" targetElement="_D87231D4-CA3E-4253-BB93-9B0406E22B52">
         <di:waypoint x="940" y="340" />
         <di:waypoint x="500" y="60" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="_3AA5F6C3-1530-4F76-9B03-C5134DBE40BB" dmnElementRef="_B5B21A07-4A45-40B1-90CE-0BEAB1ED7D3E" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="740" y="20" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_27444AE6-C476-4F0D-A6C2-6ED09BFA7E71" dmnElementRef="_1B766173-AF29-45F0-A804-38CB65C3DC5D" sourceElement="_D87231D4-CA3E-4253-BB93-9B0406E22B52" targetElement="_3AA5F6C3-1530-4F76-9B03-C5134DBE40BB">
+        <di:waypoint x="500" y="60" />
+        <di:waypoint x="820" y="60" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
