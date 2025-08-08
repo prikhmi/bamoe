@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_5DF8A398-3EBE-4775-B648-083624B83DF9" id="_BEF89BAB-DF83-4A5F-8CD1-E0DB1D30FBA6" name="DMN_069D0134-AF49-4D6A-A221-E57F854EEB8F" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0">
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_5DF8A398-3EBE-4775-B648-083624B83DF9" id="_BEF89BAB-DF83-4A5F-8CD1-E0DB1D30FBA6" name="DMN_069D0134-AF49-4D6A-A221-E57F854EEB8F">
+  <itemDefinition id="_9863BF39-2CC9-4B17-8B63-131CD3644440" name="New data type" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" />
   <inputData name="customerType" id="_660126F6-151E-479C-A011-F659CD14D29B">
     <variable name="customerType" id="_C962B59F-109C-4508-85C8-D6F05E3AF479" typeRef="string" />
   </inputData>
@@ -69,6 +70,29 @@
         </outputEntry>
         <annotationEntry>
           <text>// Your annotations here</text>
+        </annotationEntry>
+      </rule>
+      <rule id="_40BE661A-5AAF-47A0-88B7-39C1D846E228">
+        <inputEntry id="_2D94E8BB-CB6E-4B23-8A42-F2C1DC4BE9F0">
+          <text>&quot;Indian&quot;</text>
+        </inputEntry>
+        <inputEntry id="_63D49FFE-A9EF-4E97-905F-152BD31A6EB7">
+          <text>&quot;Agency&quot;</text>
+        </inputEntry>
+        <inputEntry id="_777685BE-FC08-41AA-8B67-9E17D468700F">
+          <text>&quot;East&quot;</text>
+        </inputEntry>
+        <inputEntry id="_07027523-8DA0-46E4-9009-2A53090BF717">
+          <text>&quot;TRAD&quot;</text>
+        </inputEntry>
+        <inputEntry id="_EBDFD9DF-36F3-4E5D-81FA-284C4567B24F">
+          <text>&lt;=2500000</text>
+        </inputEntry>
+        <outputEntry id="_52BA7950-680C-4743-95F7-8C22278FDC54">
+          <text>&quot;Digital&quot;</text>
+        </outputEntry>
+        <annotationEntry>
+          <text></text>
         </annotationEntry>
       </rule>
     </decisionTable>
